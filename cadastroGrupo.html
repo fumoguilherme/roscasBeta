@@ -1,0 +1,945 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Roscas</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Sweetalert Css -->
+    <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap Select Css -->
+    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="plugins/autocomplete/easy-autocomplete.min.css">
+
+    <!-- Additional CSS Themes file - not required-->
+    <link rel="stylesheet" href="plugins/autocomplete/easy-autocomplete.themes.min.css">
+
+</head>
+
+<body class="theme-green">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <div class="nav navbar-nav navbar-right">
+                    <a class=" navbar-right navbrandimg bg-light-blue collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" >
+                        <span><strong>T </strong> </span>
+                    </a>
+
+                    <a href="menu.html" class="navbrandIco"> <i class=" col-white font-40 material-icons">home</i> </a>
+
+                </div>
+                <!--<a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>-->
+
+
+
+                <!--<span class="navbrand" >ROSCAS</span>-->
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">person</i>
+                            <span id="nome_tecnico"> Técnico</span>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Grupos</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="index.html"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h4 class="text-center"> <strong> Criar Grupo </strong></h4>
+            </div>
+
+            <!-- Input Group -->
+            <div id="step1">
+                <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row clearfix">
+
+                                <div class="col-md-4 hidden">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">subtitles</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control date" placeholder="ID">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">group</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="nome_grupo" class="form-contro" placeholder="Nome do Grupo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">calendar_today</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="data_inicio"  class=" datepicker form-control " placeholder="Data Inicio">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">date_range</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="data_fim" class="datepicker form-control " placeholder="Data de Fim">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">date_range</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="duracao" class="form-control date " placeholder="Duração">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 ">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">account_balance</i>
+                                        </span>
+                                        <div class="form-line">
+
+
+                                            <input type="number" id="taxa_juros" class="form-control" placeholder="Juros">
+                                            <span class="glyphicon form-control-feedback">%</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">attach_money</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="number" id="taxa_fs" class="form-control " placeholder="Taxa FS">
+                                            <span class="glyphicon form-control-feedback">MT</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">attach_money</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="number" id="taxa_at" class="form-control " placeholder="Taxa AT">
+                                            <span class="glyphicon form-control-feedback">MT</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 hide">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">build</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="number" class="form-control date" placeholder="Quantidade Min. Membros">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 hide">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">build</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="number" class="form-control date" placeholder="Quantidade Max. Membros">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4 hide">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">settings_backup_restore</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control date" placeholder="Número de Rounds">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-4 ">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">schedule</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <select id="periodicidade" class="form-control show-tick">
+                                                <option value="1">Semanal</option>
+                                                <option value="2">Quinzenal</option>
+                                                <option value="3">Mensal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="tecnico"   placeholder="(Técnico)">
+                                            <a id="bt_limpar"> <span class=" form-control-close"> <i class="material-icons">close</i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">location_on</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" id="tecnico_zona"  placeholder="Zona" readonly >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6  col-md-6">
+                                    <a href="menu.html" class="btn btn-block bg-green waves-effect" type="exit">
+                                        <i class="material-icons">close</i>
+                                        <span>Cancelar</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6  col-md-6 js-sweetalert">
+                                    <button class="btn btn-block bg-light-green waves-effect" id="bt_proximo">
+                                        <i class="material-icons">arrow_forward</i>
+                                        <span>Próximo</span>
+                                    </button>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+            <div id="step2" class="" >
+             <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 class="text-center">
+                                Adicionar Membro
+                            </h2>
+                        </div>
+                        <br>
+
+                        <div class="col-xs-9">
+                            <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                <div class="form-line">
+                                    <input type="text" id="membro_nome"  placeholder="ID/Nome">
+                                    <a id="bt_limpar2"> <span class=" form-control-close"> <i class="material-icons">close</i></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" text-center  col-xs-3">
+                            <button type="button" class="btn btn-sm btn-info waves-effect" id="bt_add_membro">
+                                <i class="material-icons">person_add</i>
+                            </button>
+                        </div>
+
+                        <div class="col-xs-9 hidden">
+                            <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                <div class="form-line">
+                                    <input type="text" id="membro_id"  placeholder="ID">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-9 hidden">
+                            <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                <div class="form-line">
+                                    <input type="text" id="nome_id"  placeholder="ID">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="body table-responsive">
+                            <table class="table" id="tabela_membros">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>Acção</th>
+
+                                </tr>
+                                </thead>
+                                <tbody id="tabela_membros_body">
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-xs-6  col-md-6">
+                            <a href="#" class="btn btn-block bg-green waves-effect" id="bt_voltar" type="exit">
+                                <i class="material-icons">arrow_back</i>
+                                <span>Voltar</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-6  col-md-6 js-sweetalert">
+                            <a  class="btn btn-block bg-light-green waves-effect" id="bt_gravar" >
+                                <span>Guardar</span>
+                                <i class="material-icons">save</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Basic Examples -->
+
+            </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="plugins/momentjs/moment.js"></script>
+
+
+    <script src="plugins/autosize/autosize.js"></script>
+
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+
+
+
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+    <script src="js/pages/ui/dialogs.js"></script>
+    <script src="js/pages/forms/basic-form-elements.js"></script>
+
+
+
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
+
+
+    <script src="js/roscas/config.js"></script>
+
+
+    <!-- JS file -->
+    <script src="plugins/autocomplete/jquery.easy-autocomplete.min.js"></script>
+
+    <script>
+
+        //Definição de variáveis
+        var codigo = [];
+        var nome = [];
+        var tecnico_responsavel_codigo = "";
+        var grupo_id = "";
+
+        $('#bt_limpar').on('click', function () {
+
+            $("#tecnico_zona").val("");
+            $("#tecnico").val("");
+
+
+        });
+
+        $('#bt_limpar2').on('click', function () {
+
+            $("#membro_nome").val("");
+
+
+        });
+
+
+
+        $('#bt_voltar').on('click', function () {
+
+            $('#step1').show();
+            $('#step2').hide();
+
+
+
+        });
+
+        $( window ).load(function() {
+            $('#step2').hide();
+        });
+
+        //Preenchimento da data do fim
+        $( "#data_fim" ).change(function() {
+
+           var data = $('#data_fim').val();
+           var data_inicio = $('#data_inicio').val();
+
+           if(data_inicio.length !== 0) {
+
+               $.ajax({
+                   type: 'POST', //Or 'GET',
+                   url: ip + "php/controller/adicionar/addGrupo.php?data_fim=" + data + "&data_inicio=" + data_inicio,
+                   success: function (data) {
+
+                       var result = JSON.parse(data);
+                       if (result.estado === 'erro') {
+                           swal({
+
+                               title: "Duração de " + result.meses + " meses!",
+                               text: "Cada ciclo deve ter no mínimo 6 meses<br> <br>" +
+                               "<div class='row col-md-12'>" +
+                               "<div class='col-md-6'>" +
+                               "</div> " +
+                               "</div> ",
+                               type: "error",
+                               showConfirmButton: true,
+
+
+                               html: true
+                           });
+
+                           $('#data_fim').val("");
+
+                           return false;
+                       } else if (result.estado === 'sucesso') {
+
+                           $('#duracao').val(result.meses + " meses");
+
+                       }else if(result.estado === 'maior'){
+                           swal({
+
+                               title: "Erro!",
+                               text: "A data de início não pode ser maior que a data de fim<br> <br>" +
+                               "<div class='row col-md-12'>" +
+                               "<div class='col-md-6'>" +
+                               "</div> " +
+                               "</div> ",
+                               type: "error",
+                               showConfirmButton: true,
+
+
+                               html: true
+                           });
+
+                           $('#data_inicio').val("");
+                           $('#data_fim').val("");
+                           $('#duracao').val("");
+
+                       }
+
+                       return false;
+                   },
+                   error: function () {
+
+                       alert("ocorreu um erro");
+
+                       return false;
+                   }
+               });
+           }else{
+
+               swal({
+
+                   title: "Erro!",
+                   text: "Coloque primeiro a data de início<br> <br>" +
+                   "<div class='row col-md-12'>" +
+                   "<div class='col-md-6'>" +
+                   "</div> " +
+                   "</div> ",
+                   type: "error",
+                   showConfirmButton: true,
+
+
+                   html: true
+               });
+
+               $('#data_fim').val("");
+
+           }
+            });
+
+        //Passagem para o segundo step
+        $('#bt_proximo').on('click', function () {
+
+
+            var nome_grupo = $('#nome_grupo').val();
+            var data_fim = $('#data_fim').val();
+            var taxa_fs = $('#taxa_fs').val();
+            var taxa_at = $('#taxa_at').val();
+            var tecnico = $('#tecnico').val();
+            var tecnico_zona = $('#tecnico_zona').val();
+            var periodicidade = $('#periodicidade').val();
+            var data_inicio = $('#data_inicio').val();
+            var taxa_juros = $('#taxa_juros').val();
+
+
+            if(nome_grupo.length === 0 || data_fim.length === 0 || taxa_fs.length === 0 || taxa_at.length === 0 ||
+                tecnico.length === 0 || tecnico_zona.length === 0 || data_fim.length === 0 || taxa_juros.length === 0){
+                swal({
+
+                    title: "Campos vazios!",
+                    text: "Todos campos devem ser preenchidos<br> <br>" +
+                    "<div class='row col-md-12'>" +
+                    "<div class='col-md-6'>" +
+                    "</div> " +
+                    "</div> ",
+                    type: "error",
+                    showConfirmButton:true,
+
+
+                    html: true
+                });
+            }else if(parseFloat(taxa_juros) < 0 || parseFloat(taxa_juros)  > 30) {
+
+                swal({
+
+                    title: "Taxa de juros inválida!",
+                    text: "A taxa de jurus não pode ser menor que 0 ou superior a 30%<br> <br>" +
+                    "<div class='row col-md-12'>" +
+                    "<div class='col-md-6'>" +
+                    "</div> " +
+                    "</div> ",
+                    type: "error",
+                    showConfirmButton:true,
+
+
+                    html: true
+                });
+
+            }else{
+                $('#step1').hide()
+                $('#step2').show()
+
+
+
+
+
+            }
+        });
+
+
+        //Dados do técnico
+        $.ajax({
+            type: 'POST', //Or 'GET',
+            url: ip+"php/controller/pesquisar/dadosTecnico.php",
+            success: function (data) {
+
+                //alert(data);
+
+                var result = JSON.parse(data);
+
+                var nome = result.nome_tecnico;
+                var email = result.email_tecnico;
+
+
+                $('#nome_tecnico').text(nome);
+                $('#email_tecnico').text(email);
+
+
+                return false;
+            },
+            error: function () {
+
+                alert("ocorreu um erro");
+
+                return false;
+            }
+        });
+
+        // Auto complete do membro
+        var options2 = {
+
+            url: ip+"php/controller/pesquisar/membros.php",
+
+            getValue: "membro_dado",
+
+
+            list: {
+
+                onSelectItemEvent: function() {
+                    var selectedItemValue = $("#membro_nome").getSelectedItemData().membro_codigo;
+                    var selectedItemValueNome = $("#membro_nome").getSelectedItemData().membro_nome;
+
+                    $("#membro_id").val(selectedItemValue).trigger("change");
+                    $("#nome_id").val(selectedItemValueNome).trigger("change");
+
+
+                },
+                maxNumberOfElements: 1000,
+                match: {
+                    enabled: true
+                },
+                requestDelay: 500
+
+            }
+        };
+        $("#membro_nome").easyAutocomplete(options2);
+
+
+        // Auto complete do tecnico
+        var options3 = {
+
+            url: ip+"php/controller/pesquisar/Tecnicos.php",
+
+            getValue: "tecnico",
+
+
+            list: {
+
+                onSelectItemEvent: function() {
+                    var selectedItemValue = $("#tecnico").getSelectedItemData().tecnico_caixa_zona;
+                    $("#tecnico_zona").val(selectedItemValue).trigger("change");
+                    tecnico_responsavel_codigo = $("#tecnico").getSelectedItemData().tecnico_id;
+
+                },
+                maxNumberOfElements: 1000,
+                match: {
+                    enabled: true
+                },
+                requestDelay: 500
+
+            }
+        };
+        $("#tecnico").easyAutocomplete(options3);
+
+
+        //Adição de membros
+        $('#bt_add_membro').on('click', function () {
+
+            var verify = false;
+            var membro_id = $('#membro_id').val();
+            var membro_nome = $('#nome_id').val();
+            var td = "";
+
+            if(membro_id.length !== 0) {
+
+                for (var j = 0; j < codigo.length; j++) {
+                    if (codigo[j] === membro_id) {
+                        verify = true;
+                        break;
+                    }
+                }
+
+                if (!verify) {
+
+                    codigo.push(membro_id);
+                    nome.push(membro_nome);
+                    $("#membro_nome").val("");
+
+                    for (var i = 0; i < codigo.length; i++) {
+
+
+                        td = "<tr id='" + i + "'> <th scope='row'> " + codigo[i] + " </th> ";
+
+                        td += " <td> " + nome[i] + " </td> ";
+
+                        td += "<td><span class='badge bg-blue-grey' onclick='removerMembro(this.id)'  id='" + i + "_btremover'>Remover</span> </td>";
+
+                        td += "</tr>";
+
+
+                    }
+
+                    $('#tabela_membros_body').append(td);
+                    td = "";
+                    $('#membro_id').val("")
+                }
+
+            }
+
+
+        });
+
+
+        //Criação de grupo
+        $('#bt_gravar').on('click', function () {
+
+
+            var nome_grupo = $('#nome_grupo').val();
+            var data_fim = $('#data_fim').val();
+            var taxa_fs = $('#taxa_fs').val();
+            var taxa_at = $('#taxa_at').val();
+            var tecnico = $('#tecnico').val();
+            var tecnico_zona = $('#tecnico_zona').val();
+            var periodicidade = $('#periodicidade').val();
+            var data_inicio = $('#data_inicio').val();
+            var taxa_juros = $('#taxa_juros').val();
+
+
+            if(codigo.length >= 4) {
+
+
+                var myJSON = JSON.stringify(codigo);
+
+
+                $.ajax({
+                    type: 'POST', //Or 'GET',
+                    url: ip + "php/controller/adicionar/addGrupo.php?nome_grupo=" + nome_grupo + "&data_fim=" + data_fim + "" +
+                    "&periodicidade="+periodicidade+"&taxa_fs=" + taxa_fs + "&taxa_at=" + taxa_at + "&tecnico_resp=" + tecnico_responsavel_codigo + "&data_inicio=" + data_inicio+
+                    "&taxa_juros="+taxa_juros,
+                    success: function (data) {
+                        var result = JSON.parse(data);
+
+                        if (result.estado === 'sucesso') {
+
+                            grupo_id = result.grupo;
+
+
+                            $.ajax({
+                                type: 'POST', //Or 'GET',
+                                url: ip + "php/controller/adicionar/addMembroGrupo.php?membro_ids=" + myJSON + "&grupo_id=" + grupo_id,
+                                success: function (data) {
+
+                                    var result = JSON.parse(data);
+
+                                    if (result.estado === 'sucesso') {
+                                        swal({
+
+                                            title: "Sucesso!",
+                                            text: "O grupo foi criado com sucesso<br> <br>" +
+                                            "Nome   : <strong>" + result.grupo_nome + "</strong><br>" +
+                                            "Codigo : <strong>" + result.grupo_id + "</strong><br><br>" +
+                                            "<div class='row col-md-12'>" +
+                                            "<div class='col-md-6'>" +
+                                            "<a class='btn btn-block bg-blue-grey waves-effect col-md-6' id='gerirGrupo' href='cadastroGrupo.html'> Gerir grupo </a>" +
+                                            "<a class='btn btn-block bg-blue-grey waves-effect col-md-6' href='menu.html'> Menu </a>" +
+                                            "</div> " +
+                                            "</div> ",
+                                            type: "success",
+                                            showConfirmButton: false,
+                                            html: true
+                                        });
+
+
+                                        var url = 'gerirGrupo.html?token=' + result.grupo_id_enc;
+
+                                        $('#gerirGrupo').attr("href", url);
+
+
+
+
+                                    } else {
+                                        swal({
+
+                                            title: "Erro!",
+                                            text: "Não foi possível criar o grupo<br> <br>" +
+                                            "<div class='row col-md-12'>" +
+                                            "<div class='col-md-6'>" +
+                                            "</div> " +
+                                            "</div> ",
+                                            type: "error",
+                                            showConfirmButton: true,
+                                            html: true
+                                        });
+                                    }
+
+                                    return false;
+                                },
+                                error: function () {
+
+                                    alert("ocorreu um erro");
+
+                                    return false;
+                                }
+                            });
+
+
+                        } else {
+                            swal({
+
+                                title: "Erro!",
+                                text: "Não foi possível criar o grupo<br> <br>" +
+                                "<div class='row col-md-12'>" +
+                                "<div class='col-md-6'>" +
+                                "</div> " +
+                                "</div> ",
+                                type: "error",
+                                showConfirmButton: true,
+                                html: true
+                            });
+
+                        }
+
+                    },
+                    error: function () {
+
+                        alert("ocorreu um erro");
+
+                        return false;
+                    }
+
+
+                });
+            }else{
+                swal({
+
+                    title: "Membros insuficientes!",
+                    text: "O grupo não pode ter menos de 10 membros<br> <br>" +
+                    "<div class='row col-md-12'>" +
+                    "<div class='col-md-6'>" +
+                    "</div> " +
+                    "</div> ",
+                    type: "error",
+                    showConfirmButton: true,
+                    html: true
+                });
+            }
+
+        });
+
+        function removerMembro(id) {
+
+            membro_id = id.split('_')[0];
+            $("#"+membro_id).remove();
+            codigo.splice(id,1);
+            nome.splice(id,1);
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
